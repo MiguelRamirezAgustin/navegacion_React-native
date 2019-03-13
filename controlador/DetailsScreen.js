@@ -6,11 +6,20 @@ import {
     View,
 } from 'react-native';
 
+
 class DetailsScreen extends Component{
     render(){
+
+      const { navigation } = this.props;
+      const itemId = navigation.getParam('itemId', 'NO-ID');
+      const otherParam = navigation.getParam('otherParam', 'some default value');
+
       return(
         <View style={{flex:1, alignItems:'center', justifyContent:'center'}}>
            <Text>Detalles</Text>
+
+           <Text>itemId:{JSON.stringify(itemId)}</Text>
+           <Text>otherParam:{JSON.stringify(otherParam)}</Text>
            
            <Button style={styles.botones}
            title='click.1'

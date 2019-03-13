@@ -22,15 +22,29 @@ import Contactos from './controlador/Contactos.js';
   render() {
     return (
       <View style={styles.container}>
-        <Text >Principal...!!</Text>
-        <Button style={styles.botones}
-         title='click'
-         onPress={()=> this.props.navigation.navigate('Details')}
-        />
-        <Text >Principal...!!</Text>
-         <Button style={styles.botones_1}
-         title='click contactos'
+        <Text style={styles.textoTitulo}>Pantalla inicila de pruebas</Text>
+
+        <Button 
+         title='pantalla 1'
+         color= '#008000'
+         padding='10'
+         justifyContent= 'center'
+         border= '1px solid black'
          onPress={()=> this.props.navigation.navigate('Contacto')}
+        />
+
+         <Button 
+         title='pantalla 2'
+         color= '#008000'
+         marginTop= '40'
+         width= '10%'
+         height= '30%'
+         justifyContent= 'center'
+         onPress={()=> {this.props.navigation.navigate('Details',{
+           itemId:86,
+            ontherParam:'Datos de parametro'
+         });
+        }}
         />
       </View>
     );
@@ -63,22 +77,20 @@ export default class App extends Component{
 
 
 const styles = StyleSheet.create({
+ 
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems:'center',
+    backgroundColor: '#00CED1',
+    flexDirection: 'column',
+    width: '100%',
+    height: '100%',
   },
-  botones: {
-    borderColor: '#800000',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FF0000',
-  },
-  botones_1: {
-    borderColor: '#845000',
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#FF0000',
+  textoTitulo:{
+    justifyContent:'center',
+    color:'black',
+    fontWeight:'bold',
+    fontSize: 20,
+    marginTop: 5,
   }
 });

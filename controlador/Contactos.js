@@ -12,8 +12,12 @@ class Contactos extends Component {
     render(){
         return(
           <View style={styles.view_1}>
-            <Button
-            title='principal'
+            <Button 
+            title='Inicio'
+            color='#00008B'
+            width='20%'
+            fontSize="20%"
+            borderRadius= '3'
             onPress={()=> this.props.navigation.navigate('Home')}/>
           </View>
         );
@@ -22,9 +26,9 @@ class Contactos extends Component {
 
 const styles = StyleSheet.create({
     view_1:{
-        backgroundColor:"#00FFFF",
+        flex: 1,
+        backgroundColor:"#ADFF2F",
     }
-
 });
 
 export default Contactos;
