@@ -8,6 +8,9 @@ import {
 
 
 class DetailsScreen extends Component{
+  static navigationOptions={
+    title:'Detail'
+  };
     render(){
 
       const { navigation } = this.props;

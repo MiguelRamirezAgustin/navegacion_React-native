@@ -19,33 +19,36 @@ import Contactos from './controlador/Contactos.js';
 
 //Componente principal 
  class HomeScreen extends Component{
+   static navigationOptions={
+     title:'Home'
+   };
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.textoTitulo}>Pantalla inicila de pruebas</Text>
+      
+      <Text style={styles.textoTitulo}>Pantalla inicila de pruebas</Text>
+
+       <View style={styles.conenedor_1}>
 
         <Button 
-         title='pantalla 1'
-         color= '#008000'
-         padding='10'
-         justifyContent= 'center'
-         border= '1px solid black'
-         onPress={()=> this.props.navigation.navigate('Contacto')}
-        />
+           title='pantalla 1'
+           color= 'red'
+           backgroundColor='green'
+           borderRadius='10%'
+          onPress={()=> this.props.navigation.navigate('Contacto')}
+          />
+       </View>
+       <View style={styles.conenedor_2}>
 
-         <Button 
+       <Button 
          title='pantalla 2'
          color= '#008000'
-         marginTop= '40'
-         width= '10%'
-         height= '30%'
-         justifyContent= 'center'
          onPress={()=> {this.props.navigation.navigate('Details',{
            itemId:86,
             ontherParam:'Datos de parametro'
          });
-        }}
-        />
+        }}/>
+        </View>
       </View>
     );
   }
@@ -85,6 +88,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     width: '100%',
     height: '100%',
+    justifyContent: 'flex-start',
   },
   textoTitulo:{
     justifyContent:'center',
@@ -92,5 +96,18 @@ const styles = StyleSheet.create({
     fontWeight:'bold',
     fontSize: 20,
     marginTop: 5,
+  },
+  conenedor_1:{
+    width: '100%',
+    height: '30%',
+    flex:1, 
+    backgroundColor: 'steelblue',
+    top:50
+  },
+  conenedor_2:{
+    width: '100%',
+    height: '30%',
+    flex:1, 
+    backgroundColor: 'red',
   }
 });
